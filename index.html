@@ -47,21 +47,14 @@
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
     <a-nft
       type="nft"
-      url="rendeira"
+      url="capa"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
 
-<a-text id="debugText"
-        value="Marcador não detectado"
-        position="0 2 -2"
-        color="yellow"
-        visible="true"
-        align="center"
-        scale="2 2 2">
-</a-text>
+
       
       <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
   <a-box position="0 0.5 0" material="color: red;"></a-box>
@@ -77,23 +70,6 @@
     <!-- static camera that moves according to the device movemenents -->
     <a-entity camera></a-entity>
   </a-scene>
-
-<script>
-  const marker = document.querySelector('a-nft');
-  const debugText = document.querySelector('#debugText');
-
-  marker.addEventListener('markerFound', () => {
-    console.log("Marcador encontrado");
-    debugText.setAttribute('value', 'Marcador DETECTADO!');
-    debugText.setAttribute('color', 'lime');
-  });
-
-  marker.addEventListener('markerLost', () => {
-    console.log("Marcador perdido");
-    debugText.setAttribute('value', 'Marcador NÃO detectado');
-    debugText.setAttribute('color', 'red');
-  });
-</script>
 
   
 </body>
